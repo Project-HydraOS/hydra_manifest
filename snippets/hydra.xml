@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- HydraOS additions -->
+
+  <!-- Build -->
+  <project path="build/make" name="android_build" groups="pdk" remote="hydra" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="hydra" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- Bionic -->
+  <project path="bionic" name="android_bionic" groups="pdk" remote="hydra" />
+
+  <!-- External -->
+  <project path="external/perfetto" name="android_external_perfetto" groups="pdk" remote="hydra" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="hydra" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="hydra" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk" remote="hydra" />
+
+  <!-- Hardware -->
+  <project path="hardware/interfaces" name="android_hardware_interfaces" groups="pdk" remote="hydra" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" groups="pdk-fs" remote="hydra" />
+  <project path="packages/apps/LineageParts" name="android_packages_apps_LineageParts" groups="pdk-fs" remote="hydra" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="hydra" />
+  <project path="packages/apps/Venom" name="android_packages_apps_Venom" groups="pdk-fs" remote="hydra" />
+  <project path="packages/providers/WeatherClient" name="packages_providers_WeatherClient" remote="hydra" />
+
+  <!-- SDK -->
+  <project path="lineage-sdk" name="android_hydra-sdk" remote="hydra" />
+
+  <!-- System -->
+  <project path="system/core" name="android_system_core" groups="pdk" remote="hydra" />
+  <project path="system/qcom" name="android_system_qcom" remote="hydra" />
+  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="hydra" />
+  <project path="system/vold" name="android_system_vold" groups="pdk" remote="hydra" />
+
+  <!-- Vendor -->
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="android_vendor_qcom_opensource_cryptfs_hw" groups="qcom,pdk-qcom"  remote="hydra" />
+  <project path="vendor/hydra" name="android_vendor_hydra" remote="hydra" />
+  <project path="vendor/themes" name="hydra_vendor_themes" remote="hydra" />
+  <project path="hydra/manifest" name="hydra_manifest" remote="hydra" />
+
+</manifest>
